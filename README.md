@@ -47,4 +47,10 @@ This will open the Jupyterlab interface in your browser, where you can create ne
 
 To start a new Python 3 notebook, click "New" in the upper right and select "Notebook: > Python 3".
 
+## Getting Started
 
+To get started with the TeachOpenCadd tutorials, go [here](https://projects.volkamerlab.org/teachopencadd/talktorials.html).
+
+You can find my notes and code for the tutorials in this repository, labeled `T001...ipynb`, `T002...ipynb`, etc.
+
+I have also added the data for those tutorials to the `data` directory in this repository.
