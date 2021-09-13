@@ -26,7 +26,7 @@ conda activate cadd-env
 
 Inside the `cadd-env` environment, run this command:
 ```
-conda install -c rdkit -c conda-forge jupyterlab pandas matplotlib rdkit chembl_webresource_client
+conda install -c rdkit -c conda-forge jupyterlab pandas matplotlib rdkit chembl_webresource_client tqdm ipywidgets
 ```
 This will install the following packages into the `cadd-env` environment:
 
@@ -36,14 +36,15 @@ This will install the following packages into the `cadd-env` environment:
  - [`rdkit`](https://www.rdkit.org/docs/) is a powerful chemistry library for Python, which enables you to visualize and structurally analyze different molecules.
  - [`chembl_webresource_client`](https://github.com/chembl/chembl_webresource_client) is a Python interface to the [ChEMBL database](https://www.ebi.ac.uk/chembl/) of bioactive molecules.
 
+Additional minor packages included in the install command here are: `tqdm` for visualizing progress bars with long downloads; `ipywidgets` for making `tqdm` work in a Jupyter notebook.
+You will also need to run the following command to enable widgets in Jupyter:
+```
+jupyter nbextension enable --py widgetsnbextension
+```
+
+
 Note that these packages are only available to you inside of your `cadd-env` environment.
 You will need to activate it anytime you want to use them.
-
-Some additional packages to install for the TeachOpenCADD tutorials are included on the following line:
-```
-conda install tqdm
-```
-`tqdm` is for creating progress bars for long downloads.
 
 
 ### Starting A Jupyter Notebook Session
