@@ -39,6 +39,13 @@ This will install the following packages into the `cadd-env` environment:
 Note that these packages are only available to you inside of your `cadd-env` environment.
 You will need to activate it anytime you want to use them.
 
+Some additional packages to install for the TeachOpenCADD tutorials are included on the following line:
+```
+conda install tqdm
+```
+`tqdm` is for creating progress bars for long downloads.
+
+
 ### Starting A Jupyter Notebook Session
 
 To start a new Jupyter notebook session, simply type
