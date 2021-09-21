@@ -12,6 +12,11 @@ Upon opening the newly installed Ubuntu app, you will be prompted to create a us
 
 What you have just installed is an Ubuntu operating system -- sort of like a separate computer within your computer -- which you are accessing through a Linux (also known by the broader term "Unix") [terminal](https://en.wikipedia.org/wiki/Computer_terminal). Different terminals have different languages that are used to enter terminal commands. This one uses the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) command language.
 
+Before moving forward, you should change one setting in order to enable copy-pasting in your terminal:
+1. Click the orange Ubuntu icon in the upper left corner of your terminal window.
+2. Click "Properties"
+3. Check the box that says "Ctrl+Shift+C/V as Copy/Paste".
+
 To get started, enter the following Bash terminal command:
 ```
 echo "HELLO WORLD"
@@ -22,20 +27,17 @@ Your Ubuntu OS has its own file system. To figure out where you are in your file
 ```
 pwd
 ```
-You can access your Windows file system as a "mounted drive" by navigating to `/mnt/c/Users/<your username>`.
+If you ever need to, you can access your Windows file system as a "mounted drive" by navigating to `/mnt/c/Users/<your username>`.
 You can do so with the "change directory" command.
 ```
 cd /mnt/c/Users/<your username>
 ```
+If you aren't sure what your user name is, you can start typing and press tab to see the available options along the way.
+
 To see what's in the directory you navigated to, you can use the "list" command:
 ```
 ls
 ```
-
-Before moving forward, you should change one setting in order to enable copy-pasting in your terminal:
-1. Click the orange Ubuntu icon in the upper left corner of your terminal window.
-2. Click "Properties"
-3. Check the box that says "Ctrl+Shift+C/V as Copy/Paste".
 
 ### Installing Conda
 
