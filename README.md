@@ -4,9 +4,42 @@ These are some notes for beginners on getting set up to start doing computer-aid
 
 ## Setting Up
 
+### Starting from Windows
+
+Starting from a Windows machine, you will need to follow [these instructions](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to get a working Linux terminal. Follow the instructions to install the "Ubuntu" app and then open it. This will open an [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu)-flavored [Linux](https://en.wikipedia.org/wiki/Linux_distribution) terminal, which is where you will do all of your work.
+
+Upon opening the newly installed Ubuntu app, you will be prompted to create a username and password. You will need this password to run any commands requiring "superuser" permissions (commands starding with "sudo").
+
+What you have just installed is an Ubuntu operating system -- sort of like a separate computer within your computer -- which you are accessing through a Linux (also known by the broader term "Unix") [terminal](https://en.wikipedia.org/wiki/Computer_terminal). Different terminals have different languages that are used to enter terminal commands. This one uses the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) command language.
+
+To get started, enter the following Bash terminal command:
+```
+echo "HELLO WORLD"
+```
+You should see that it prints `"HELLO WORLD"` to your screen. You can learn more terminal commands from [this tutorial](https://linuxjourney.com/lesson/the-shell).
+
+Your Ubuntu OS has its own file system. To figure out where you are in your file system, use the "print working directory" command:
+```
+pwd
+```
+You can access your Windows file system as a "mounted drive" by navigating to `/mnt/c/Users/<your username>`.
+You can do so with the "change directory" command.
+```
+cd /mnt/c/Users/<your username>
+```
+To see what's in the directory you navigated to, you can use the "list" command:
+```
+ls
+```
+
+Before moving forward, you should change one setting in order to enable copy-pasting in your terminal:
+1. Click the orange Ubuntu icon in the upper left corner of your terminal window.
+2. Click "Properties"
+3. Check the box that says "Ctrl+Shift+C/V as Copy/Paste".
+
 ### Installing Conda
 
-First, install Miniconda from [here](https://docs.conda.io/en/latest/miniconda.html).
+You can find the appropriate installer [here](https://docs.conda.io/en/latest/miniconda.html).
 
 ### Creating Your Environment
 
