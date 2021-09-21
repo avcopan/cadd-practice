@@ -6,22 +6,33 @@ These are some notes for beginners on getting set up to start doing computer-aid
 
 ### Starting from Windows
 
-Starting from a Windows machine, you will need to follow [these instructions](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to get a working Linux terminal. Follow the instructions to install the "Ubuntu" app and then open it. This will open an [Ubuntu](https://en.wikipedia.org/wiki/Ubuntu)-flavored [Linux](https://en.wikipedia.org/wiki/Linux_distribution) terminal, which is where you will do all of your work.
+If you are starting on a Windows machine, you will need to install a separate Linux operating system called "Ubuntu" onto it.
+Most of the software we will be using is designed to run on a Linux OS, because these operating systems are open-source (freely available) and are widely used in scientific computing.
 
+Start by following [these instructions](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install the Ubuntu OS as a Windows Subsystem.
+
+Once you have the "Ubuntu" app installed, open it.
 Upon opening the newly installed Ubuntu app, you will be prompted to create a username and password. You will need this password to run any commands requiring "superuser" permissions (commands starding with "sudo").
 
-What you have just installed is an Ubuntu operating system -- sort of like a separate computer within your computer -- which you are accessing through a Linux (also known by the broader term "Unix") [terminal](https://en.wikipedia.org/wiki/Computer_terminal). Different terminals have different languages that are used to enter terminal commands. This one uses the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) command language.
-
-Before moving forward, you should change one setting in order to enable copy-pasting in your terminal:
+Before moving forward, you should change one setting:
 1. Click the orange Ubuntu icon in the upper left corner of your terminal window.
 2. Click "Properties"
 3. Check the box that says "Ctrl+Shift+C/V as Copy/Paste".
 
-To get started, enter the following Bash terminal command:
+This will enable you to copy and paste in your terminal window (more on that momentarily).
+
+Some context on what you have just installed:
+Ubuntu is the most popular instance of the broader family Linux operating systems.
+The Ubuntu "app" that you are installing is sort of like a separate computer within your computer.
+You will interact with this Linux "subsystem" through a [terminal](https://en.wikipedia.org/wiki/Computer_terminal) window, which is just a window that allows you to enter operating system commands.
+In a moment, we will show some simple commands to do things like print to the screen, move from one folder (or "directory") to another, tell you which directory you are in, list contents of a given directory, download a file from the internet, etc.
+
+Different terminals have different languages that are used to enter terminal commands. This one uses the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) command language.
+As a first attempt, let's use the `echo` command to print a message to our screen:
 ```
 echo "HELLO WORLD"
 ```
-You should see that it prints `"HELLO WORLD"` to your screen. You can learn more terminal commands from [this tutorial](https://linuxjourney.com/lesson/the-shell).
+You should see that it prints `HELLO WORLD` to your screen.
 
 Your Ubuntu OS has its own file system. To figure out where you are in your file system, use the "print working directory" command:
 ```
@@ -38,14 +49,50 @@ To see what's in the directory you navigated to, you can use the "list" command:
 ```
 ls
 ```
+If you need to, you can learn more terminal commands from [this tutorial](https://linuxjourney.com/lesson/the-shell).
+
+I will give you all of the commands you need here to install the necessary software, so you can wait to learn more unless you are interested.
 
 ### Installing Conda
 
-You can find the appropriate installer [here](https://docs.conda.io/en/latest/miniconda.html).
+[Conda](https://en.wikipedia.org/wiki/Conda_(package_manager)) is a powerful package-manager for scientific computing.
+You can think of it like an "app store".
+
+If you are on a Linux machine or using a Linux terminal on Windows, you can download the install script for conda to your current directory as follows using the "web get" command:
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
+This installer script is written in the Bash language.
+You can run it as follows:
+```
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+You will be prompted to accept the licensing terms along with two questions:
+ - The first question will ask you where you want it installed. Instead of `/home/<username>/miniconda3`, set the install location to `/home/<username>/conda`.
+ - The second question will ask you you want to initialize conda. Answer `yes` here. (If you miss this step and type "no", it should give you instructions at the end for running the initialization command.)
+
+Then restart your terminal.
+When you restart, you should see the word "base" in parentheses next to your terminal prompt.
+This indicates that you are in Conda's "base environment".
+All of your software for this project will be installed into an environment that is specific to this work.
+If you do more coding in the future, you would create new environments with the necessary software.
+
+To check that it worked, try the following command to update conda:
+```
+conda update conda
+```
+There seem to be some recent issues with allowing conda permissions on a Windows subsystem.
+If you get an HTTP Error like I did, the following should fix it for you:
+```
+chmod -R 777 /home/<username>/conda
+```
+after which you can try the update command again.
+
+Once the update command is working, you should be good to go.
 
 ### Creating Your Environment
 
-Then create an environment called `cadd-env`, which is where you will install all of your software.
+Next, we will create a conda environment called `cadd-env`, which is where you will install all of your software for this project.
 You can create this environment as follows:
 ```
 conda create -n cadd-env python=3
