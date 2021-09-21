@@ -103,6 +103,7 @@ To activate the environment you just created, you will then use:
 ```
 conda activate cadd-env
 ```
+When this environment is active, your terminal window will say `(cadd-env)` to the left of the terminal prompt.
 
 ### Installing Packages Into Your Environment
 
