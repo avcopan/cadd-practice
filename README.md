@@ -15,6 +15,8 @@ Then create an environment for the dependencies in `teachopencadd` and `opencadd
 - https://raw.githubusercontent.com/volkamerlab/teachopencadd/master/devtools/test_env.yml
 - https://raw.githubusercontent.com/volkamerlab/opencadd/master/devtools/conda-envs/user_env.yaml
 
+I have done this on Jan 22, 2022 with the file `env.yml` uploaded here.
+
 Once you have the environment file set up, use
 ```
 mamba env create -f env.yml
