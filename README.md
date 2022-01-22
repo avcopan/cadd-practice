@@ -12,13 +12,15 @@ conda install mamba -n base -c conda-forge
 ```
 Then create an environment for the dependencies in `teachopencadd` and `opencadd`. Currently, the links for these environments are:
 
-- [https://raw.githubusercontent.com/volkamerlab/teachopencadd/master/devtools/test_env.yml]
-- [https://raw.githubusercontent.com/volkamerlab/opencadd/master/devtools/conda-envs/user_env.yaml]
+- https://raw.githubusercontent.com/volkamerlab/teachopencadd/master/devtools/test_env.yml
+- https://raw.githubusercontent.com/volkamerlab/opencadd/master/devtools/conda-envs/user_env.yaml
 
 Once you have the environment file set up, use
 ```
 mamba env create -f env.yml
 ```
+
+Also, I had to do some special finagling with Jupyter to set up a password in order for NGLView images to show up in Jupyter.
 
 ## Setting Up
 
