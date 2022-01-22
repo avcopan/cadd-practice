@@ -2,6 +2,24 @@
 
 These are some notes for beginners on getting set up to start doing computer-aided drug design (CADD) research, based on the Volkamer Lab's excellent collection of [talktorials](https://projects.volkamerlab.org/teachopencadd/talktorials.html).
 
+## Note to self
+
+The installation has changed. It is necessary now to use `mamba` to install the environment.
+
+To install mamba, use
+```
+conda install mamba -n base -c conda-forge
+```
+Then create an environment for the dependencies in `teachopencadd` and `opencadd`. Currently, the links for these environments are:
+
+- [https://raw.githubusercontent.com/volkamerlab/teachopencadd/master/devtools/test_env.yml]
+- [https://raw.githubusercontent.com/volkamerlab/opencadd/master/devtools/conda-envs/user_env.yaml]
+
+Once you have the environment file set up, use
+```
+mamba env create -f env.yml
+```
+
 ## Setting Up
 
 ### Starting from Windows
