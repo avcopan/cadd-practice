@@ -105,3 +105,16 @@ conda install mamba -n base -c conda-forge
 
 Next you will create the environment where all of your CADD packages will be installed.
 
+I have created an "environment" file, which lists all of the packages that you want in your environment. You can download it as follows:
+```
+wget https://raw.githubusercontent.com/avcopan/cadd-practice/main/env.yml
+```
+Once downloaded, you can use mamba to install all of the packages listed in the file into a single environment using the following command:
+```
+mamba env create -f env.yml
+```
+This will create a new environment called "cadd" with all of your packages installed in it.
+Even with Mamba, this may take a while to run.
+
+> ***Note to self**: I created this environment by splicing together the [TeachOpenCADD environment file](https://raw.githubusercontent.com/volkamerlab/teachopencadd/master/devtools/test_env.yml) with the [OpenCADD environment file](https://raw.githubusercontent.com/volkamerlab/opencadd/master/devtools/conda-envs/user_env.yaml). Between the two of these, we should have everything we could ever need. Repeating packages in the list, so it's relatively easy to copy paste them into a single environment file. Note, however, that you need to leave off the pip installs and the the sphinx packages at the end can be left off as well.*
+
