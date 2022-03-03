@@ -22,7 +22,7 @@ Before moving forward, you should change one setting:
 This will enable you to copy and paste in your terminal window (more on that momentarily).
 
 Some context on what you have just installed:
-Ubuntu is the most popular instance of the broader family Linux operating systems.
+Ubuntu is the most popular flavor from the broader family of [Linux](https://en.wikipedia.org/wiki/Linux) operating systems.
 The Ubuntu "app" that you are installing is sort of like a separate computer within your computer.
 You will interact with this Linux "subsystem" through a [terminal](https://en.wikipedia.org/wiki/Computer_terminal) window, which is just a window that allows you to enter operating system commands.
 In a moment, we will show some simple commands to do things like print to the screen, move from one folder (or "directory") to another, tell you which directory you are in, list contents of a given directory, download a file from the internet, etc.
@@ -52,3 +52,56 @@ ls
 If you need to, you can learn more terminal commands from [this tutorial](https://linuxjourney.com/lesson/the-shell).
 
 I will give you all of the commands you need here to install the necessary software, so you can wait to learn more unless you are interested.
+
+
+### Installing Conda
+
+[Conda](https://en.wikipedia.org/wiki/Conda_(package_manager)) is a powerful package-manager for scientific computing.
+You can think of it like an "app store".
+
+If you are on a Linux machine or using a Linux terminal on Windows, you can download the install script for conda to your current directory as follows using the "web get" command (to paste it in your terminal, use Ctrl+V):
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
+This installer script is written in the Bash language.
+You can run it as follows:
+```
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+You will be prompted to accept the licensing terms along with several questions. For yes/no questions, simply type 'yes'. For other questions, just hit Enter to accept the default settings. The last question will ask you you want to initialize conda. Answer `yes` here as well, even though the default is `no`. (If you miss this step and type "no", it should give you instructions at the end for running the initialization command.)
+
+Then restart your terminal.
+When you restart, you should see the word "base" in parentheses next to your terminal prompt.
+This indicates that you are in Conda's "base environment".
+All of your software for this project will be installed into an environment that is specific to this work.
+If you do more coding in the future, you would create new environments with the necessary software.
+
+To check that it worked, try the following command to update conda:
+```
+conda update conda
+```
+There seem to be some recent issues with allowing conda permissions on a Windows subsystem.
+If you get an HTTP Error like I did, the following should fix it for you:
+```
+chmod -R 777 ~/miniconda3
+```
+after which you can try the update command again.
+
+Once the update command is working, you should be good to go.
+
+#### Adding Mamba to Conda
+
+I know this is getting to be a lot, but bear with me.
+Mamba is an extra package that can be installed into conda to do things that conda already does, but faster.
+It's sort of like installing a fancy engine into an ordinary car -- conda is the car and mamba is the fancy engine that can make your ordinary car drive faster.
+CADD requires installing lots and lots of packages that all need to work together, and so having the more powerful mamba installer to make our installations run faster is worth it.
+
+You can install mamba with the following command:
+```
+conda install mamba -n base -c conda-forge
+```
+
+### Creating Your Environment
+
+Next you will create the environment where all of your CADD packages will be installed.
+
