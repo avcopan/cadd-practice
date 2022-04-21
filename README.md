@@ -2,7 +2,7 @@
 
 These are some notes for beginners on getting set up to start doing computer-aided drug design (CADD) research, based on the Volkamer Lab's excellent collection of [talktorials](https://projects.volkamerlab.org/teachopencadd/talktorials.html).
 
-[This tutorial](https://github.com/deepchem/deepchem/blob/master/examples/tutorials/Modeling_Protein_Ligand_Interactions.ipynb) for the deepchem package seems to have some cleaner, simpler workflows for preparing protein and ligand for docking or MD simulation.
+**Note to self:** [This tutorial](https://github.com/deepchem/deepchem/blob/master/examples/tutorials/Modeling_Protein_Ligand_Interactions.ipynb) for the deepchem package seems to have some cleaner, simpler workflows for preparing protein and ligand for docking or MD simulation.
 
 ## Setting Up
 
